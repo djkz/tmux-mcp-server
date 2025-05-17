@@ -7,21 +7,6 @@ from typing import List, Dict, Optional
 # Create an MCP server
 server = FastMCP("Tmux MCP")
 
-
-# Add an addition tool
-@server.tool()
-def add(a: int, b: int) -> int:
-    """Add two numbers"""
-    return a + b
-
-
-# Add a dynamic greeting resource
-@server.resource("greeting://{name}")
-def get_greeting(name: str) -> str:
-    """Get a personalized greeting"""
-    return f"Hello, {name}!"
-
-
 # Tmux utility functions
 def get_tmux_sessions() -> List[Dict[str, str]]:
     """Get a list of all tmux sessions as structured data"""
